@@ -1,5 +1,5 @@
 import React from 'react';
-import './todo-list.css';
+import './todo-list-item.css';
 
 const TodoListItem = ({ label, important = false }) => {
     const style = {
@@ -7,9 +7,13 @@ const TodoListItem = ({ label, important = false }) => {
     }
 
     return (
-        <span
-            className="todo-list-item"
-            style={style}>{label}</span>
+        <div className="item-row">
+            <td style={style}>{label}</td>
+            <button type="button" class="btn btn-outline-success btn-sm">
+                <i class="fa fa-check"></i>
+            </button>
+        </div>
+
     );
 }
 

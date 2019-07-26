@@ -1,16 +1,22 @@
 import React from 'react';
+import './search-panel.css';
 
 const SearchPanel = () => {
 
     const searchText = 'Type here to search';
-    const searchStyle = {
-        fontSize: '25px'
-    };
 
-    return <input
-        style={searchStyle}
-        placeholder={searchText}
-        className="foo" />
+    return (
+        <div className="search-panel">
+            <input
+                placeholder={searchText}
+                className="form-control" />
+            <div class="btn-group btn-group-toggle">
+                <button type="button" class="btn btn-outline-primary">All</button>
+                <button type="button" class="btn btn-outline-info">Active</button>
+                <button type="button" class="btn btn-outline-success">Done</button>
+            </div>
+        </div>
+    )
 }
 
 export default SearchPanel;

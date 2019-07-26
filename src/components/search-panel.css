@@ -1,0 +1,9 @@
+.search-panel {
+    display: flex;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.search-panel input {
+    margin-right: .5rem;
+}

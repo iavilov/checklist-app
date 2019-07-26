@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import AppHeader from './components/app-header';
 import SearchPanel from './components/search-panel';
 import TodoList from './components/todo-list';
+import './index.css';
 
 const App = () => {
 
@@ -14,10 +14,12 @@ const App = () => {
     ];
 
     return (
-        <div>
-            <AppHeader />
-            <SearchPanel />
-            <TodoList todos={todoData} />
+        <div className="todo-app">
+            <div className="content">
+                <AppHeader />
+                <SearchPanel />
+                <TodoList todos={todoData} />
+            </div>
         </div>
     );
 
