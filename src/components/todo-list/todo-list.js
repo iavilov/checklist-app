@@ -1,24 +1,20 @@
 import React from 'react';
-import TodoListItem from './todo-list-item';
+import TodoListItem from '../todo-list-item';
 import './todo-list.css';
 
 const TodoList = ({ todos }) => {
 
     const elements = todos.map((item) => {
         return (
-            <tr key={item.id}>
+            <div className="todo-list-row" key={item.id}>
                 <TodoListItem {...item} />
-            </tr>
+            </div>
         );
     });
 
     return (
         <div className="todo-list">
-            <table class="table">
-                <tbody>
-                    {elements}
-                </tbody>
-            </table>
+            {elements}
         </div>
     );
 }

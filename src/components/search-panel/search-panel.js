@@ -10,10 +10,10 @@ const SearchPanel = () => {
             <input
                 placeholder={searchText}
                 className="form-control" />
-            <div class="btn-group btn-group-toggle">
-                <button type="button" class="btn btn-outline-primary">All</button>
-                <button type="button" class="btn btn-outline-info">Active</button>
-                <button type="button" class="btn btn-outline-success">Done</button>
+            <div className="btn-group btn-group-toggle">
+                <button type="button" className="btn btn-outline-primary">All</button>
+                <button type="button" className="btn btn-outline-info">Active</button>
+                <button type="button" className="btn btn-outline-success">Done</button>
             </div>
         </div>
     )

@@ -1,0 +1,21 @@
+.todo-list {
+    margin-top: 2rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}   
+
+.todo-list .todo-list-row {
+    display: flex;
+    align-items: center;    
+    border: 0;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    border-top: none;
+    padding: .5rem;
+}
+
+.todo-list .todo-list-row:last-child {
+    border-bottom: none;
+}
+
+.todo-list td {}
