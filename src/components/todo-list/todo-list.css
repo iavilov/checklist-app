@@ -14,8 +14,19 @@
     padding: .5rem;
 }
 
+.todo-list .todo-list-row:hover {
+    cursor: pointer;
+}
+
 .todo-list .todo-list-row:last-child {
     border-bottom: none;
 }
 
-.todo-list td {}
+.done {
+    text-decoration: line-through;
+}
+
+.important {
+    font-weight: bold;
+    color: tomato;
+}

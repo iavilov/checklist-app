@@ -5,15 +5,11 @@
     width: 100%;
 }
 
-.item-row .item-button {
-
-} 
-
 .item-row p {
     margin-bottom: 0;
 }
 
-.item-row button {
+.item-status-filter button {
     margin-right: 1rem;
     width: 32px;
     height: 32px;
