@@ -1,3 +1,9 @@
 .item-add-form {
-    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.7rem;
+}
+
+.item-add-form input {
+    max-width: 300px;
 }
