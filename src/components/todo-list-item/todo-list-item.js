@@ -4,36 +4,15 @@ import './todo-list-item.css';
 
 export default class TodoListItem extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            done: false,
-            important: false
-        };
-    }
-
-    onLabelClick = () => {
-        this.setState(({done}) => {
-            return {
-                done: !done
-            }
-        })
-    }
-
-    onClickMarkImportant = () => {
-        this.setState(({important}) => {
-            return {
-                important: !important
-            }
-        })
-    }
-
     render() {
-        const { label } = this.props;
-        const { done, important } = this.state;
+        const {
+            label,
+            onToggleDone,
+            onToggleImportant,
+            done,
+            important } = this.props;
 
         let classNames = '';
-
         if (done) {
             classNames += ' done'
         }
@@ -46,18 +25,19 @@ export default class TodoListItem extends Component {
             <div className="item-row">
                 <p
                     className={classNames}
-                    onClick={this.onLabelClick}>{label}</p>
+                    onClick={onToggleDone}
+                >{label}</p>
                 <div className="item-status-filter">
-                    <button 
-                    type="button" 
-                    className="btn btn-outline-danger btn-sm"
-                    onClick={this.props.onDeleted}>
+                    <button
+                        type="button"
+                        className="btn btn-outline-danger btn-sm"
+                        onClick={this.props.onDeleted}>
                         <i className="fa fa-trash-o"></i>
                     </button>
                     <button
                         type="button"
                         className="btn btn-outline-success btn-sm"
-                        onClick={this.onClickMarkImportant}>
+                        onClick={onToggleImportant}>
                         <i className="fa fa-exclamation"></i>
                     </button>
                 </div>
