@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import ItemStatusFilter from '../item-status-filter'
 import './todo-list-item.css';
 
 export default class TodoListItem extends Component {

@@ -13,7 +13,9 @@ export default class App extends Component {
             this.createTodoItem('Drink cofee'),
             this.createTodoItem('Make awesome App'),
             this.createTodoItem('Have a lunch')
-        ]
+        ],
+        term: '',
+        filter: 'all' //active, all, done
     };
 
     createTodoItem(label) {
@@ -61,7 +63,6 @@ export default class App extends Component {
         const oldItem = arr[idx];
         const newItem = {
             ...oldItem,
-            
             [propName]: !oldItem[propName]
         };
 
@@ -71,7 +72,7 @@ export default class App extends Component {
             ...arr.slice(idx + 1)
         ];
 
-    }
+    };
 
     onToggleDone = (id) => {
         this.setState(({ todoData }) => {
@@ -87,23 +88,61 @@ export default class App extends Component {
                 todoData: this.toggleProperty(todoData, id, 'important')
             }
         });
+    };
+
+    onSearchChange = (term) => {
+        this.setState({ term });
+    };
+
+    onFilterChange = (filter) => {
+        this.setState({ filter });
+    };
+
+    search(items, term) {
+        if (term.length === 0) {
+            return items;
+        }
+
+        return items.filter((item) => {
+            return item.label
+                .toLowerCase().indexOf(term.toLowerCase()) > -1;
+        });
+    }
+
+    filter(items, filter) {
+
+        switch (filter) {
+            case 'all':
+                return items;
+            case 'active':
+                return items.filter((item) => !item.done);
+            case 'done':
+                return items.filter((item) => item.done);
+            default:
+                return items;
+        }
     }
 
     render() {
 
-        const { todoData } = this.state;
+        const { todoData, term, filter } = this.state;
+
+        const visibleItems = this.filter(this.search(todoData, term), filter);
         const doneCount = todoData.filter((el) => el.done).length;
         const todoCount = todoData.length - doneCount;
-        
+
         return (
             <div className="todo-app">
                 <div className="content">
-                    <AppHeader 
-                    todo={todoCount}
-                    done={doneCount}/>
-                    <SearchPanel />
+                    <AppHeader
+                        todo={todoCount}
+                        done={doneCount} />
+                    <SearchPanel
+                        onSearchChange={this.onSearchChange}
+                        onFilterChange={this.onFilterChange}
+                        filter={filter} />
                     <TodoList
-                        todos={todoData}
+                        todos={visibleItems}
                         onDeleted={this.deleteItem}
                         onToggleImportant={this.onToggleImportant}
                         onToggleDone={this.onToggleDone} />
