@@ -1,8 +1,17 @@
-ToDo list
+# ToDo list app
+It's a simple react application.
 
-App
-    AppHeader
-    SearchPanel
-    TodoList
-        TodoListItem
-    ItemAddForm
+### Structure:
+> App
+> > AppHeader
+
+> > SearchPanel
+> > > ItemStatusFilter
+
+> > TodoList
+> > > TodoListItem
+
+> > ItemAddForm
+
+### Preview:
+![preview](https://i.ibb.co/xCtH7Kp/ezgif-com-video-to-gif.gif)
