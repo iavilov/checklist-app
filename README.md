@@ -14,4 +14,4 @@ It's a simple react application.
 > > ItemAddForm
 
 ### Preview:
-![preview](https://i.ibb.co/xCtH7Kp/ezgif-com-video-to-gif.gif)
+![preview](https://i.ibb.co/z45j2qn/todo-app.gif)
